@@ -15,7 +15,7 @@ export function Hero() {
   const { t, waQuote } = useI18n();
 
   return (
-    <section className="relative h-[100svh] min-h-[640px] overflow-hidden" id="inicio">
+    <section className="relative isolate h-[100svh] min-h-[640px] overflow-hidden" id="inicio">
       <div className="absolute inset-0 bg-tc-black">
         <Image
           src={ASSETS.hero}
@@ -24,10 +24,10 @@ export function Hero() {
           priority
           quality={100}
           sizes="100vw"
-          className="pointer-events-none object-cover object-[center_48%] sm:object-center"
+          className="pointer-events-none object-cover object-center"
           draggable={false}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/82 via-black/35 to-black/20" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-tc-black to-transparent" />
       </div>
 

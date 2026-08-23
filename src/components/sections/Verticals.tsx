@@ -1,16 +1,15 @@
 "use client";
 
-import { ASSETS } from "@/lib/constants";
 import { useI18n } from "@/components/I18nProvider";
 import { SectionFrame } from "@/components/ui/SectionFrame";
 
 export function Verticals() {
   const { t } = useI18n();
   return (
-    <SectionFrame id="para-quien" src={ASSETS.civic} className="border-y border-[var(--tc-line)]">
+    <SectionFrame id="para-quien" density="medium" variant="gold-drift" className="border-y border-[var(--tc-line)]">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <p className="text-[11px] tracking-[0.4em] text-tc-gold uppercase">{t.verticals.kicker}</p>
-        <h2 className="font-display mt-3 max-w-3xl text-3xl leading-[1.05] uppercase sm:text-5xl">{t.verticals.title}</h2>
+        <p className="section-kicker">{t.verticals.kicker}</p>
+        <h2 className="section-title mt-3 max-w-3xl">{t.verticals.title}</h2>
         <div className="mt-14 grid gap-4 sm:grid-cols-2">
           {t.verticals.items.map((v, i) => (
             <article key={v.title} className="border border-[var(--tc-line)] bg-tc-black/75 p-6 backdrop-blur-sm sm:p-8">

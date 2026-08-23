@@ -26,11 +26,11 @@ Cupos de oferta: `LAUNCH_OFFER.remainingSlots` en `src/lib/constants.ts`.
 | Archivo | Uso |
 |---|---|
 | `intro-preloader.png` | Fondo del intro (Imagen 1) |
-| `hero-home.png` | Hero / Open Graph (Imagen 2) |
+| `intro-landscape.png` | Intro + hero / Open Graph |
 | `portfolio-audi-q3.png` | Portfolio + Sobre el estudio (Imagen 3, 9:16) |
 | `portfolio-bmw-m4.png` | Portfolio (Imagen 4, 9:16) |
 | `logo-official.png` | Emblema (nav, intro, favicon) |
-| `hero-civic-forest.png` | Portfolio Civic |
+| `logo-clear.png` | Nav, footer, intro (fondo transparente) |
 
 Piezas futuras del grid deben mantener **logo arriba + auto abajo, 9:16**, para homogeneidad.
 

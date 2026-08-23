@@ -1,16 +1,15 @@
 "use client";
 
-import { ASSETS } from "@/lib/constants";
 import { useI18n } from "@/components/I18nProvider";
 import { SectionFrame } from "@/components/ui/SectionFrame";
 
 export function Process() {
   const { t } = useI18n();
   return (
-    <SectionFrame id="proceso" src={ASSETS.bmw}>
+    <SectionFrame id="proceso" density="low" variant="gold-drift">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <p className="text-[11px] tracking-[0.4em] text-tc-gold uppercase">{t.process.kicker}</p>
-        <h2 className="font-display mt-3 text-4xl uppercase sm:text-6xl">{t.process.title}</h2>
+        <p className="section-kicker">{t.process.kicker}</p>
+        <h2 className="section-title mt-3">{t.process.title}</h2>
         <ol className="mt-14 grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
           {t.process.items.map((p, i) => (
             <li

@@ -19,7 +19,6 @@ export function Preloader() {
     void Promise.all([
       loadImage(ASSETS.landscape),
       loadImage(ASSETS.logoClear),
-      loadImage(ASSETS.hero),
     ]).then(() => {
       if (!cancelled) setReady(true);
     });
@@ -48,11 +47,11 @@ export function Preloader() {
 
       gsap.set(brand.current, { opacity: 0, y: 24, scale: 0.88 });
       gsap.set(bar.current, { width: "0%" });
+      gsap.set(landWrap.current, { scale: 1.03, opacity: 1 });
 
-      tl.fromTo(
+      tl.to(
         landWrap.current,
-        { scale: 1.08, opacity: 0 },
-        { scale: 1.18, opacity: 1, duration: 6, ease: "none" },
+        { scale: 1.1, duration: 6, ease: "none" },
         0,
       );
       tl.to(brand.current, { opacity: 1, y: 0, scale: 1, duration: 0.85, ease: "power3.out" }, 2.05);

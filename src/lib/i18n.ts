@@ -68,7 +68,11 @@ export const dict = {
       title2: "destaquen",
       cta: "Agenda tu cita por WhatsApp",
     },
-    footer: { rights: "Santo Domingo, RD." },
+    footer: {
+      rights: "Santo Domingo, RD.",
+      nav: "Navegación",
+      legalSoon: "Términos y privacidad: páginas legales pendientes (no hay enlace activo).",
+    },
     wa: {
       quote: "Hola, quiero cotizar un paquete de contenido",
       offer: "Hola, quiero info sobre la oferta de los primeros 3 clientes.",
@@ -141,7 +145,11 @@ export const dict = {
       title2: "stand out",
       cta: "Book via WhatsApp",
     },
-    footer: { rights: "Santo Domingo, DR." },
+    footer: {
+      rights: "Santo Domingo, DR.",
+      nav: "Navigate",
+      legalSoon: "Terms and privacy: legal pages pending (no active link yet).",
+    },
     wa: {
       quote: "Hi, I want a quote for a content package",
       offer: "Hi, I want info on the first 3 clients offer.",

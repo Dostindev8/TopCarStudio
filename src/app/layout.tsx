@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Top Car Studio",
     description: SITE.tagline,
-    images: [{ url: "/brand/hero-home.png", width: 1200, height: 630, alt: SITE.name }],
+    images: [{ url: "/brand/intro-landscape.png", width: 1200, height: 630, alt: SITE.name }],
     locale: "es_DO",
     type: "website",
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE.name,
     description: SITE.tagline,
-    images: ["/brand/hero-home.png"],
+    images: ["/brand/intro-landscape.png"],
   },
   icons: {
     icon: "/brand/logo-clear.png",

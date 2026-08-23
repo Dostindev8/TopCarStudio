@@ -18,12 +18,12 @@ export const SITE = {
 export const ASSETS = {
   landscape: "/brand/intro-landscape.png",
   intro: "/brand/intro-preloader.png",
-  hero: "/brand/hero-home.png",
+  hero: "/brand/intro-landscape.png",
   logo: "/brand/logo-official.png",
   logoClear: "/brand/logo-clear.png",
-  civic: "/brand/hero-civic-forest.png",
   audi: "/brand/portfolio-audi-q3.png",
   bmw: "/brand/portfolio-bmw-m4.png",
+  sedan: "/brand/portfolio-sedan.png",
 } as const;
 
 export const WA = {
@@ -135,40 +135,21 @@ export const PROCESS = [
 
 export const PORTFOLIO = [
   {
-    id: "mercedes",
-    title: "Mercedes — carretera cinematográfica",
+    id: "sedan",
+    title: "Honda",
     type: "image" as const,
-    src: ASSETS.hero,
+    src: ASSETS.sedan,
   },
   {
     id: "audi-q3",
-    title: "Audi Q3 — bosque atardecer",
+    title: "Audi Q3",
     type: "image" as const,
     src: ASSETS.audi,
   },
   {
     id: "bmw-m4",
-    title: "BMW M4 — ciudad golden hour",
+    title: "BMW M4",
     type: "image" as const,
     src: ASSETS.bmw,
-  },
-  {
-    id: "civic",
-    title: "Honda Civic — bosque dorado",
-    type: "image" as const,
-    src: ASSETS.civic,
-  },
-  {
-    id: "durango-hud",
-    title: "Dodge Durango — overlay HUD",
-    type: "video" as const,
-    /** [PLACEHOLDER - solicitar archivo original en alta resolución al cliente] */
-    src: ASSETS.audi,
-  },
-  {
-    id: "reel-estudio",
-    title: "Identidad de estudio",
-    type: "image" as const,
-    src: ASSETS.intro,
   },
 ] as const;

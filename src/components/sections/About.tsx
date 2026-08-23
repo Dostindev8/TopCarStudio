@@ -4,14 +4,13 @@ import Image from "next/image";
 import { ASSETS, SITE } from "@/lib/constants";
 import { useI18n } from "@/components/I18nProvider";
 import { InstagramIcon } from "@/components/ui/InstagramIcon";
+import { SectionFrame } from "@/components/ui/SectionFrame";
 
 export function About() {
   const { t } = useI18n();
   return (
-    <section id="estudio" className="relative overflow-hidden border-y border-[var(--tc-line)]">
-      <Image src={ASSETS.landscape} alt="" fill quality={90} sizes="100vw" className="object-cover opacity-25" />
-      <div className="absolute inset-0 bg-tc-black/80" />
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2">
+    <SectionFrame id="estudio" density="low" variant="gold-dust" className="border-y border-[var(--tc-line)]">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-2">
         <div className="relative aspect-[9/16] max-h-[720px] border border-[var(--tc-line)] bg-tc-black">
           <Image
             src={ASSETS.audi}
@@ -24,8 +23,8 @@ export function About() {
           />
         </div>
         <div>
-          <p className="text-[11px] tracking-[0.4em] text-tc-gold uppercase">{t.about.kicker}</p>
-          <h2 className="font-display mt-3 text-4xl uppercase sm:text-5xl">Top Car Studio</h2>
+          <p className="section-kicker">{t.about.kicker}</p>
+          <h2 className="section-title mt-3">Top Car Studio</h2>
           <p className="mt-6 max-w-md text-base leading-relaxed text-tc-grey">{t.about.copy}</p>
           <a
             href={SITE.instagramUrl}
@@ -38,6 +37,6 @@ export function About() {
           </a>
         </div>
       </div>
-    </section>
+    </SectionFrame>
   );
 }
