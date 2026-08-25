@@ -9,7 +9,7 @@ export const SITE = {
   whatsapp: "18492652114",
   instagramHandle: "@topcarsstudio",
   instagramUrl: "https://www.instagram.com/topcarsstudio/",
-  /** [PLACEHOLDER - confirmar URLs exactas de TikTok/YouTube si existen] */
+  /** TODO-CLIENTE: confirmar URLs exactas de TikTok/YouTube si existen */
   tiktokUrl: "https://www.instagram.com/topcarsstudio/",
   youtubeUrl: "https://www.instagram.com/topcarsstudio/",
   url: "https://topcarstudio.com",
@@ -18,12 +18,13 @@ export const SITE = {
 export const ASSETS = {
   landscape: "/brand/intro-landscape.png",
   intro: "/brand/intro-preloader.png",
-  hero: "/brand/intro-landscape.png",
+  hero: "/brand/hero-noir.png",
   logo: "/brand/logo-official.png",
   logoClear: "/brand/logo-clear.png",
   audi: "/brand/portfolio-audi-q3.png",
   bmw: "/brand/portfolio-bmw-m4.png",
   sedan: "/brand/portfolio-sedan.png",
+  studio: "/brand/studio-garage.png",
 } as const;
 
 export const WA = {
@@ -31,7 +32,12 @@ export const WA = {
   offer: `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent("Hola, quiero info sobre la oferta de los primeros 3 clientes.")}`,
 } as const;
 
-/** [PLACEHOLDER - cliente debe actualizar manualmente el número de cupos restantes] */
+/**
+ * Cupos de la oferta de lanzamiento.
+ * Editar solo estos números — no hace falta tocar JSX.
+ * remainingSlots = cupos libres; totalSlots = cupo máximo (3 en el copy actual).
+ * TODO-CLIENTE: actualizar remainingSlots cuando se ocupe un cupo.
+ */
 export const LAUNCH_OFFER = {
   totalSlots: 3,
   remainingSlots: 2,

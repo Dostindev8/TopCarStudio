@@ -1,22 +1,46 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CalendarDays, Megaphone, ShoppingCart, Ticket } from "lucide-react";
 import { useI18n } from "@/components/I18nProvider";
 import { SectionFrame } from "@/components/ui/SectionFrame";
+import { UseCaseCard } from "@/components/ui/UseCaseCard";
+
+const ICONS = [ShoppingCart, CalendarDays, Ticket, Megaphone] as const;
 
 export function Verticals() {
   const { t } = useI18n();
+  const grid = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const root = grid.current;
+    if (!root) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const cards = root.querySelectorAll("article");
+    const ctx = gsap.context(() => {
+      gsap.from(cards, {
+        opacity: 0,
+        y: 28,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power2.out",
+        scrollTrigger: { trigger: root, start: "top 82%" },
+      });
+    }, root);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <SectionFrame id="para-quien" density="medium" variant="gold-drift" className="border-y border-[var(--tc-line)]">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <p className="section-kicker">{t.verticals.kicker}</p>
         <h2 className="section-title mt-3 max-w-3xl">{t.verticals.title}</h2>
-        <div className="mt-14 grid gap-4 sm:grid-cols-2">
+        <div ref={grid} className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
           {t.verticals.items.map((v, i) => (
-            <article key={v.title} className="border border-[var(--tc-line)] bg-tc-black/75 p-6 backdrop-blur-sm sm:p-8">
-              <p className="font-display text-sm text-tc-gold">0{i + 1}</p>
-              <h3 className="mt-3 text-2xl tracking-[0.18em] text-tc-gold uppercase">{v.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-tc-grey">{v.copy}</p>
-            </article>
+            <UseCaseCard key={v.title} index={i + 1} icon={ICONS[i]!} title={v.title} description={v.copy} />
           ))}
         </div>
       </div>

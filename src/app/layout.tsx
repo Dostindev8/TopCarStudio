@@ -25,7 +25,7 @@ const sans = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0A",
+  themeColor: "#050505",
   width: "device-width",
   initialScale: 1,
 };
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Top Car Studio",
     description: SITE.tagline,
-    images: [{ url: "/brand/intro-landscape.png", width: 1200, height: 630, alt: SITE.name }],
+    images: [{ url: "/brand/hero-noir.png", width: 1200, height: 630, alt: SITE.name }],
     locale: "es_DO",
     type: "website",
   },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE.name,
     description: SITE.tagline,
-    images: ["/brand/intro-landscape.png"],
+    images: ["/brand/hero-noir.png"],
   },
   icons: {
     icon: "/brand/logo-clear.png",

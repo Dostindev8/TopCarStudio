@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   eslint: { ignoreDuringBuilds: true },
     images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 90, 100],
+    qualities: [75, 90, 95, 100],
   },
   headers: async () => [
     {

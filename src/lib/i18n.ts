@@ -43,7 +43,7 @@ export const dict = {
     portfolio: { kicker: "Portfolio", title: "Reel Wall", more: "Ver más en Instagram", close: "Cerrar" },
     offer: {
       kicker: "Urgencia",
-      title: "Oferta especial — solo para los primeros 3 clientes",
+      title: "Oferta especial – solo para los primeros 3 clientes",
       copy: 'Comenta o escríbenos "INFO" y recibe acceso a una oferta única: paquete de contenido con 1 mes de cobertura completa.',
       slots: "cupos disponibles",
       cta: "Reclamar mi cupo por WhatsApp",
@@ -119,8 +119,8 @@ export const dict = {
     },
     portfolio: { kicker: "Portfolio", title: "Reel Wall", more: "See more on Instagram", close: "Close" },
     offer: {
-      kicker: "Launch offer",
-      title: "Special offer — first 3 clients only",
+      kicker: "Urgency",
+      title: "Special offer – first 3 clients only",
       copy: 'Comment or message "INFO" for a unique package: a full month of cinematic coverage.',
       slots: "slots available",
       cta: "Claim my slot on WhatsApp",

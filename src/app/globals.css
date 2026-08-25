@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  --color-tc-black: #0a0a0a;
-  --color-tc-black-soft: #151515;
-  --color-tc-gold: #c9a227;
-  --color-tc-gold-light: #e8c766;
+  --color-tc-black: #050505;
+  --color-tc-black-soft: #0d0d0d;
+  --color-tc-gold: #d4a72c;
+  --color-tc-gold-light: #f2c94c;
   --color-tc-gold-dim: #7a621a;
-  --color-tc-white: #f5f5f0;
-  --color-tc-grey: #8a8a85;
+  --color-tc-white: #f5f5f5;
+  --color-tc-grey: #b9b9b9;
   --font-display: var(--font-anton), "Anton", ui-sans-serif, sans-serif;
   --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --tc-black: #0a0a0a;
-  --tc-black-soft: #151515;
-  --tc-gold: #c9a227;
-  --tc-gold-light: #e8c766;
+  --tcs-black: #050505;
+  --tcs-black-soft: #0d0d0d;
+  --tcs-panel: #111111;
+  --tcs-gold: #d4a72c;
+  --tcs-gold-bright: #f2c94c;
+  --tcs-gold-glow: rgba(212, 167, 44, 0.35);
+  --tcs-white: #f5f5f5;
+  --tcs-gray: #b9b9b9;
+  --tcs-border: rgba(212, 167, 44, 0.25);
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --tc-black: #050505;
+  --tc-black-soft: #0d0d0d;
+  --tc-gold: #d4a72c;
+  --tc-gold-light: #f2c94c;
   --tc-gold-dim: #7a621a;
-  --tc-white: #f5f5f0;
-  --tc-grey: #8a8a85;
-  --tc-line: rgba(201, 162, 39, 0.15);
+  --tc-white: #f5f5f5;
+  --tc-grey: #b9b9b9;
+  --tc-line: rgba(212, 167, 44, 0.22);
 }
 
 html {
@@ -194,6 +205,32 @@ body {
   .snake-trace {
     animation: none;
     stroke-dashoffset: 0;
+  }
+}
+
+.cta-glow {
+  box-shadow: 0 0 0 1px rgba(232, 199, 102, 0.25), 0 8px 32px rgba(201, 162, 39, 0.4);
+}
+
+.offer-card {
+  animation: none;
+}
+
+.use-case-card::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--tcs-gold), transparent);
+  box-shadow: 0 0 18px 2px var(--tcs-gold-glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-card {
+    animation: none;
   }
 }
 

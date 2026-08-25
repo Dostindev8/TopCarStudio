@@ -19,16 +19,16 @@ export function Hero() {
       <div className="absolute inset-0 bg-tc-black">
         <Image
           src={ASSETS.hero}
-          alt=""
+          alt="Deportivo negro en estudio nocturno con luces doradas, Top Car Studio"
           fill
           priority
           quality={100}
           sizes="100vw"
-          className="pointer-events-none object-cover object-center"
+          className="pointer-events-none object-cover object-[center_62%] sm:object-center"
           draggable={false}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/82 via-black/35 to-black/20" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-tc-black to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/80 via-black/25 to-black/85" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-black/30" />
       </div>
 
       <div className="relative z-10 flex h-full flex-col justify-between px-5 pt-[5.5rem] pb-6 sm:px-10 sm:pt-28 lg:px-14">
