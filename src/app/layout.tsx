@@ -57,6 +57,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${display.variable} ${sans.variable}`}>
+      <head>
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://www.instagram.com" />
+      </head>
       <body className="bg-tc-black font-sans antialiased">
         <div className="film-grain" aria-hidden />
         <I18nProvider>

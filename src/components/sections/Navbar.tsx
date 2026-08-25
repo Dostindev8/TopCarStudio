@@ -83,7 +83,6 @@ export function Navbar() {
             height={160}
             quality={100}
             className="h-11 w-auto max-w-[7.5rem] object-contain sm:h-16 sm:max-w-[9rem]"
-            priority
           />
         </a>
         <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">

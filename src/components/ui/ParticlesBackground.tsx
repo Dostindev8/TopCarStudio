@@ -143,6 +143,19 @@ export function ParticlesBackground({
     io.observe(wrap);
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    const onVis = () => {
+      if (document.hidden) {
+        running = false;
+        cancelAnimationFrame(raf);
+        return;
+      }
+      if (inView && !reduced) {
+        running = true;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(tick);
+      }
+    };
+    document.addEventListener("visibilitychange", onVis);
 
     return () => {
       running = false;
@@ -150,6 +163,7 @@ export function ParticlesBackground({
       ro.disconnect();
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("visibilitychange", onVis);
     };
   }, [density, variant]);
 

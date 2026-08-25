@@ -1,25 +1,52 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function CustomCursor() {
-  const [pos, setPos] = useState({ x: -40, y: -40 });
-  const [hot, setHot] = useState(false);
+  const el = useRef<HTMLDivElement>(null);
   const [on, setOn] = useState(false);
+  const hot = useRef(false);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!fine || reduce) return;
     setOn(true);
-    const move = (e: MouseEvent) => setPos({ x: e.clientX, y: e.clientY });
+
+    let x = -40;
+    let y = -40;
+    let raf = 0;
+    let pending = false;
+
+    const paint = () => {
+      pending = false;
+      const node = el.current;
+      if (!node) return;
+      node.style.left = `${x}px`;
+      node.style.top = `${y}px`;
+      node.style.transform = `translate(-50%, -50%) scale(${hot.current ? 2.2 : 1})`;
+    };
+
+    const move = (e: MouseEvent) => {
+      x = e.clientX;
+      y = e.clientY;
+      if (pending) return;
+      pending = true;
+      raf = requestAnimationFrame(paint);
+    };
     const over = (e: MouseEvent) => {
       const t = e.target as HTMLElement | null;
-      setHot(Boolean(t?.closest("a, button")));
+      hot.current = Boolean(t?.closest("a, button"));
+      if (!pending) {
+        pending = true;
+        raf = requestAnimationFrame(paint);
+      }
     };
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseover", over);
+
+    window.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("mouseover", over, { passive: true });
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
     };
@@ -29,12 +56,13 @@ export function CustomCursor() {
 
   return (
     <div
+      ref={el}
       aria-hidden
       className="pointer-events-none fixed z-[90] mix-blend-difference"
       style={{
-        left: pos.x,
-        top: pos.y,
-        transform: `translate(-50%, -50%) scale(${hot ? 2.2 : 1})`,
+        left: -40,
+        top: -40,
+        transform: "translate(-50%, -50%)",
         width: 10,
         height: 10,
         borderRadius: 999,

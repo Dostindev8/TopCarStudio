@@ -228,6 +228,40 @@ body {
   box-shadow: 0 0 18px 2px var(--tcs-gold-glow);
 }
 
+.icon-ring {
+  position: relative;
+  overflow: hidden;
+}
+
+.icon-ring-lit {
+  box-shadow: 0 0 16px var(--tcs-gold-glow);
+}
+
+.icon-ring-lit::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  inset: -20%;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(242, 201, 76, 0.7) 50%, transparent 65%);
+  animation: icon-gleam 1.6s ease-in-out;
+}
+
+@keyframes icon-gleam {
+  from {
+    transform: translateX(-80%);
+  }
+  to {
+    transform: translateX(80%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon-ring-lit::after {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .offer-card {
     animation: none;

@@ -22,6 +22,7 @@ export function Hero() {
           alt="Deportivo negro en estudio nocturno con luces doradas, Top Car Studio"
           fill
           priority
+          fetchPriority="high"
           quality={100}
           sizes="100vw"
           className="pointer-events-none object-cover object-[center_62%] sm:object-center"

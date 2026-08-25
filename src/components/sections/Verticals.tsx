@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CalendarDays, Megaphone, ShoppingCart, Ticket } from "lucide-react";
@@ -13,6 +13,15 @@ const ICONS = [ShoppingCart, CalendarDays, Ticket, Megaphone] as const;
 export function Verticals() {
   const { t } = useI18n();
   const grid = useRef<HTMLDivElement>(null);
+  const [shine, setShine] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => {
+      setShine((n) => (n + 1) % ICONS.length);
+    }, 2600);
+    return () => window.clearInterval(id);
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -40,7 +49,14 @@ export function Verticals() {
         <h2 className="section-title mt-3 max-w-3xl">{t.verticals.title}</h2>
         <div ref={grid} className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
           {t.verticals.items.map((v, i) => (
-            <UseCaseCard key={v.title} index={i + 1} icon={ICONS[i]!} title={v.title} description={v.copy} />
+            <UseCaseCard
+              key={v.title}
+              index={i + 1}
+              icon={ICONS[i]!}
+              title={v.title}
+              description={v.copy}
+              shine={shine === i}
+            />
           ))}
         </div>
       </div>
